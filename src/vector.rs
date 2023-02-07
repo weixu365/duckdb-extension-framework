@@ -1,13 +1,11 @@
-use crate::{
-    duckly::{
-        duckdb_validity_row_is_valid, duckdb_validity_set_row_invalid,
-        duckdb_validity_set_row_valid, duckdb_validity_set_row_validity, duckdb_vector,
-        duckdb_vector_assign_string_element, duckdb_vector_assign_string_element_len,
-        duckdb_vector_ensure_validity_writable, duckdb_vector_get_column_type,
-        duckdb_vector_get_data, duckdb_vector_get_validity, duckdb_vector_size, idx_t,
-    },
-    LogicalType,
+use duckdb::ffi::{
+    duckdb_validity_row_is_valid, duckdb_validity_set_row_invalid,
+    duckdb_validity_set_row_valid, duckdb_validity_set_row_validity, duckdb_vector,
+    duckdb_vector_assign_string_element, duckdb_vector_assign_string_element_len,
+    duckdb_vector_ensure_validity_writable, duckdb_vector_get_column_type,
+    duckdb_vector_get_data, duckdb_vector_get_validity, duckdb_vector_size, idx_t,
 };
+use crate::LogicalType;
 use std::fmt::Debug;
 use std::{ffi::c_char, marker::PhantomData, slice};
 

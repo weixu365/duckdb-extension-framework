@@ -3,19 +3,20 @@ use std::path::PathBuf;
 use std::{env, path::Path};
 
 fn main() {
-    let duckdb_root = Path::new(&env::var("CARGO_MANIFEST_DIR").unwrap())
-        .join("duckdb")
-        .canonicalize()
-        .expect("duckdb source root");
+    // let duckdb_root = Path::new(&env::var("CARGO_MANIFEST_DIR").unwrap())
+    //     .join("duckdb")
+    //     .canonicalize()
+    //     .expect("duckdb source root");
 
+    let duckdb_root = Path::new("../duckdb-bindings/duckdb");
     let header = "src/wrapper.hpp";
 
     #[cfg(feature = "statically_linked")]
     {
         use build_script::{cargo_rustc_link_lib, cargo_rustc_link_search};
         cargo_rustc_link_lib("duckdb");
-        cargo_rustc_link_search(duckdb_root.join("build/debug/src"));
-        cargo_rustc_link_search(duckdb_root.join("build/release/src"));
+        // cargo_rustc_link_search(duckdb_root.join("build/debug/src"));
+        // cargo_rustc_link_search(duckdb_root.join("build/release/src"));
     }
 
     // Tell cargo to invalidate the built crate whenever the wrapper changes
@@ -48,6 +49,7 @@ fn main() {
         .generate()
         // Unwrap the Result and panic on failure.
         .expect("Unable to generate bindings");
+
 
     // Write the bindings to the $OUT_DIR/bindings.rs file.
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());

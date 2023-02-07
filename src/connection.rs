@@ -1,5 +1,5 @@
 use crate::check;
-use crate::duckly::{duckdb_connection, duckdb_disconnect, duckdb_register_table_function};
+use duckdb::ffi::{duckdb_connection, duckdb_disconnect, duckdb_register_table_function};
 use crate::table_functions::TableFunction;
 
 /// A connection to a database. This represents a (client) connection that can

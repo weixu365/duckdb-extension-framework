@@ -1,4 +1,4 @@
-use crate::duckly::{
+use duckdb::ffi::{
     duckdb_create_table_function, duckdb_delete_callback_t, duckdb_destroy_table_function,
     duckdb_table_function, duckdb_table_function_add_parameter, duckdb_table_function_init_t,
     duckdb_table_function_set_bind, duckdb_table_function_set_extra_info,

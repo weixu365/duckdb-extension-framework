@@ -4,13 +4,11 @@
 /// SELECT * from "hello.csv"
 /// ```
 /// and DuckDB will realise that you're referring to a CSV file, and read that instead
-use crate::{
-    duckly::{
-        duckdb_replacement_scan_add_parameter, duckdb_replacement_scan_info,
-        duckdb_replacement_scan_set_error, duckdb_replacement_scan_set_function_name,
-    },
-    Value,
+use duckdb::ffi::{
+    duckdb_replacement_scan_add_parameter, duckdb_replacement_scan_info,
+    duckdb_replacement_scan_set_error, duckdb_replacement_scan_set_function_name,
 };
+use crate::Value;
 use std::ffi::CString;
 pub struct ReplacementScanInfo(pub(crate) duckdb_replacement_scan_info);
 

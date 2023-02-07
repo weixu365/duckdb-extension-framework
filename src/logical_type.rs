@@ -1,5 +1,5 @@
 use crate::constants::LogicalTypeId;
-use crate::duckly::{
+use duckdb::ffi::{
     duckdb_create_list_type, duckdb_create_logical_type, duckdb_create_map_type,
     duckdb_create_struct_type, duckdb_create_union, duckdb_destroy_logical_type,
     duckdb_get_type_id, duckdb_logical_type, idx_t,

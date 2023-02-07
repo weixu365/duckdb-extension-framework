@@ -13,7 +13,6 @@ mod connection;
 mod constants;
 mod data_chunk;
 mod database;
-pub mod duckly;
 mod error;
 mod logical_type;
 pub mod table_functions;
@@ -31,7 +30,7 @@ pub use crate::logical_type::LogicalType;
 pub use crate::value::Value;
 pub use crate::vector::Vector;
 
-use crate::duckly::duckdb_malloc;
+use duckdb::ffi::duckdb_malloc;
 
 /// # Safety
 /// This function is obviously unsafe

@@ -3,13 +3,12 @@ use std::{
     ptr::{addr_of_mut, null_mut},
 };
 
-use crate::{
-    check,
-    duckly::{
-        duckdb_config, duckdb_config_count, duckdb_create_config, duckdb_destroy_config,
-        duckdb_get_config_flag, duckdb_set_config,
-    },
+use duckdb::ffi::{
+    duckdb_config, duckdb_config_count, duckdb_create_config, duckdb_destroy_config,
+    duckdb_get_config_flag, duckdb_set_config,
 };
+
+use crate::check;
 
 pub struct Config(pub(crate) duckdb_config);
 

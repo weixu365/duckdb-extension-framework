@@ -1,4 +1,4 @@
-use crate::duckly::*;
+use duckdb::ffi::*;
 
 #[derive(Debug, Eq, PartialEq, num_derive::FromPrimitive)]
 pub enum LogicalTypeId {

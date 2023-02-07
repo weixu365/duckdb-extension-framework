@@ -2,7 +2,7 @@
 #[macro_export]
 macro_rules! check {
     ($x:expr) => {{
-        if ($x != $crate::duckly::duckdb_state_DuckDBSuccess) {
+        if ($x != duckdb::ffi::duckdb_state_DuckDBSuccess) {
             Err(format!("failed call: {}", stringify!($x)))?;
         }
     }};

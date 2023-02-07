@@ -1,5 +1,5 @@
 use crate::database::DatabaseOwnership::{Borrowed, Owned};
-use crate::duckly::{
+use duckdb::ffi::{
     duckdb_add_replacement_scan, duckdb_close, duckdb_connect, duckdb_connection, duckdb_database,
     duckdb_delete_callback_t, duckdb_open, duckdb_open_ext, duckdb_replacement_callback_t,
 };

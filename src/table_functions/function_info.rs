@@ -1,5 +1,5 @@
 use crate::as_string;
-use crate::duckly::{
+use duckdb::ffi::{
     duckdb_function_get_bind_data, duckdb_function_get_extra_info, duckdb_function_get_init_data,
     duckdb_function_get_local_init_data, duckdb_function_info, duckdb_function_set_error,
 };

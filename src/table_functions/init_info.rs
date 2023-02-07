@@ -2,7 +2,7 @@
 use crate::table_functions::{BindInfo, TableFunction};
 use std::ffi::{c_void, CString};
 
-use crate::duckly::{
+use duckdb::ffi::{
     duckdb_init_get_bind_data, duckdb_init_get_column_count, duckdb_init_get_column_index,
     duckdb_init_get_extra_info, duckdb_init_info, duckdb_init_set_error, duckdb_init_set_init_data,
     duckdb_init_set_max_threads, idx_t,

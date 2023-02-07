@@ -1,4 +1,4 @@
-use crate::duckly::{duckdb_destroy_value, duckdb_get_varchar, duckdb_value};
+use duckdb::ffi::{duckdb_destroy_value, duckdb_get_varchar, duckdb_value};
 use std::ffi::CString;
 
 /// The Value object holds a single arbitrary value of any type that can be

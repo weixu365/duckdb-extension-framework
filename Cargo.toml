@@ -17,6 +17,7 @@ doctest = false
 statically_linked = []
 
 [dependencies]
+duckdb = {path="../duckdb-rs"}
 num-traits = "0.2.15"
 num-derive = "0.3.3"
 
